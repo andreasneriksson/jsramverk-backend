@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var cors = require('cors');
+
 require("dotenv").config();
 const db = require("../db/database.js");
 const bodyParser = require("body-parser");
@@ -9,6 +11,7 @@ const secret = process.env.JWT_KEY;
 
 router.use(bodyParser.json());
 router.use(express.json());
+router.use(cors())
 
 // Test route 
 router.get("/", function(req, res) {
