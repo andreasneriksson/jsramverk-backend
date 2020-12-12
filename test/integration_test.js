@@ -62,20 +62,6 @@ describe('Reports', () => {
     });
 
     describe('POST /login', () => {
-        it('TEST LOGIN TRUE USER', (done) => {
-            const body = {
-                email: "tesing@testing.se",
-                password: "testing"
-            };
-
-            chai.request(server)
-                .post("/login")
-                .send(body)
-                .end((err, res) => {
-                    res.body.data.type.should.be.a("string", "success");
-                    done();
-                });
-        });
         it('TEST LOGIN FALSE USER', (done) => {
             const body = {
                 email: "testuser@testuser.se",
